@@ -18,17 +18,55 @@ modified: '2024-1-07'
 # Tabla de contenidos
 - [DJANGO](#django)
 - [Tabla de contenidos](#tabla-de-contenidos)
-  - [Introducción](#introducción)
-  - [Instalación Django](#instalación-django)
-    - [Instalación PyCharm](#instalación-pycharm)
-    - [Sintaxis de Django](#sintaxis-de-django)
+- [Introducción](#introducción)
+- [Instalación Django](#instalación-django)
+  - [Explicamos que consiste cada archivo que se ha creado mediante comando](#explicamos-que-consiste-cada-archivo-que-se-ha-creado-mediante-comando)
+  - [Ejecutar el servidor de desarrollo](#ejecutar-el-servidor-de-desarrollo)
+  - [Crear una aplicación de Django](#crear-una-aplicación-de-django)
+- [Instalación PyCharm](#instalación-pycharm)
+- [Sintaxis de Django](#sintaxis-de-django)
+  - [Comentarios](#comentarios)
+  - [Variables](#variables)
+    - [Casting en variables](#casting-en-variables)
+    - [Obtención de tipo de datos de variablesQ](#obtención-de-tipo-de-datos-de-variablesq)
+    - [Asignación de multiples variables](#asignación-de-multiples-variables)
+    - [Concatenación de variables](#concatenación-de-variables)
+    - [Funciones globales y variables globales](#funciones-globales-y-variables-globales)
+    - [Tipos de datos](#tipos-de-datos)
+    - [Operadores](#operadores)
+    - [Diferencias entre listas, tuplas, sets y diccionarios](#diferencias-entre-listas-tuplas-sets-y-diccionarios)
+      - [Listas](#listas)
+      - [Tuplas](#tuplas)
+      - [Sets](#sets)
+      - [Diccionarios](#diccionarios)
+    - [Estrucuturas de control](#estrucuturas-de-control)
+      - [If](#if)
+      - [While](#while)
+      - [For](#for)
+    - [Funciones](#funciones)
+    - [Lambda](#lambda)
+    - [Arrays](#arrays)
+    - [Iteradores](#iteradores)
+    - [Polimorfismo](#polimorfismo)
+    - [Módulos](#módulos)
+  - [POO en Python](#poo-en-python)
+    - [Clases y objetos](#clases-y-objetos)
+    - [Métodos](#métodos)
+    - [Getter y Setter](#getter-y-setter)
+    - [Encapsulación](#encapsulación)
+    - [Herencia](#herencia)
+    - [Métodos especiales de Python](#métodos-especiales-de-python)
+    - [Métodos estáticos](#métodos-estáticos)
+    - [Métodos de clase](#métodos-de-clase)
+    - [Herencia múltiple](#herencia-múltiple)
+    - [Clases abstractas](#clases-abstractas)
 
 <div style="page-break-after: always;"></div>
 
 
 
 
-## Introducción
+# Introducción
 [Tabla de contenidos](#tabla-de-contenidos)
 
 Django es un framework gratuito, es un marco de desarrollo de web de alto nivel y de código abierto que fomenta el desarrollo rápido y limpio en Python. 
@@ -48,7 +86,7 @@ Django es una buena opción para el desarrollo de aplicaciones web de cualquier 
 
 
 
-## Instalación Django
+# Instalación Django
 [Tabla de contenidos](#tabla-de-contenidos)
 
 Para instalar Django, necesitarás cumplir con algunos requisitos previos. A continuación, se detallan los pasos básicos para instalar Django en un entorno de desarrollo.
@@ -116,6 +154,8 @@ Para instalar Django, necesitarás cumplir con algunos requisitos previos. A con
     ```console
     python3 -m django --version
     ```
+
+    ## Crear un proyecto de Django
     
     - Crear un proyecto de Django llamado "hola_mundo":
     ```console
@@ -132,6 +172,7 @@ Para instalar Django, necesitarás cumplir con algunos requisitos previos. A con
             asgi.py
             wsgi.py
 
+  ## Explicamos que consiste cada archivo que se ha creado mediante comando
     - Explicamos que consiste cada archivo que se ha creado mediante comando:
 
       - hola_munsdo/: es el directorio raíz del proyecto. Contiene el archivo manage.py y el paquete hola_mundo.
@@ -148,6 +189,8 @@ Para instalar Django, necesitarás cumplir con algunos requisitos previos. A con
     cd hola_mundo
     ```
     Este comando te mueve al directorio "hola_mundo" que se creó en el paso anterior.
+
+## Ejecutar el servidor de desarrollo
 
     - Ejecutar el servidor de desarrollo:
     ```console
@@ -178,6 +221,8 @@ Para instalar Django, necesitarás cumplir con algunos requisitos previos. A con
     python3 manage.py runserver 8080
     ```
     Este comando ejecuta el servidor de desarrollo en el puerto 8080.
+
+  ## Crear una aplicación de Django
 
     Creando la aplicación hola mundo:
 
@@ -303,10 +348,7 @@ Para instalar Django, necesitarás cumplir con algunos requisitos previos. A con
     Este comando detiene el servidor de desarrollo de Django.
 
 
-
-
-
-### Instalación PyCharm
+# Instalación PyCharm
 [Tabla de contenidos](#tabla-de-contenidos)
 
 - Introducción sobre PyCharm:
@@ -352,8 +394,9 @@ Para instalar Django, necesitarás cumplir con algunos requisitos previos. A con
 
 <div style="page-break-after: always;"></div>
 
-### Sintaxis de Django
+# Sintaxis de Django
 [Tabla de contenidos](#tabla-de-contenidos)
+
 
 Python utiliza la sangría para indicar bloques de código. Django utiliza llaves, corchetes y paréntesis para indicar bloques de código. Por ejemplo, las llaves se utilizan para indicar bloques de código en las plantillas de Django. Los corchetes se utilizan para indicar bloques de código en los archivos de configuración de Django. Los paréntesis se utilizan para indicar bloques de código en las vistas de Django.
 
@@ -363,6 +406,7 @@ if 5 > 2:
   print("Cinco es mayor que dos!")
 ```
 
+## Comentarios
 - Comentarios:
   - Comentarios de una línea:
   ```console
@@ -375,6 +419,7 @@ if 5 > 2:
   {% endcomment %}
   ```
 
+## Variables
 - Variables: Una variable se crea en el momento en que se le asigna un valor. Las variables se utilizan para almacenar datos, como cadenas de texto, números enteros, números de punto flotante, etc. En Django, las variables se utilizan para almacenar datos que se utilizan en las plantillas. Las variables de Django se crean utilizando la sintaxis {{variable}}. Por ejemplo, la variable {{nombre}} se utiliza para almacenar el nombre de un usuario.
   ```python
   x = 5 
@@ -385,63 +430,37 @@ if 5 > 2:
 
   print se utiliza para imprimir en pantalla el valor de una variable en la consola.
 
-  - Casting: Si queremos especificar el tipo de dato de una variable, podemos usar la función de casting:
-  ```python
-  x = str(3)    # x será '3'
-  y = int(3)    # y será 3
-  z = float(3)  # z será 3.0
-  ```
-  - Obtener el tipo de dato de una variable: Python tiene varios tipos de datos estándar, pero también podemos definir nuestros propios tipos de datos personalizados. Para obtener el tipo de dato de una variable, podemos usar la función type():
+    - Obtener el tipo de dato de una variable: Python tiene varios tipos de datos estándar, pero también podemos definir nuestros propios tipos de datos personalizados. Para obtener el tipo de dato de una variable, podemos usar la función type():
   ```python
   x = 5
   y = "Hola Mundo!"
   print(type(x))
   print(type(y))
   ```
-  - Las variables de cadena de texto se pueden declarar de varias formas:
+
+    - Las variables de cadena de texto se pueden declarar de varias formas:
   ```python
   x = "Hola Mundo!"
   # es lo mismo que
   x = 'Hola Mundo!'
   ```
-  - Las variables numéricas se declaran de la siguiente forma:
+
+    - Las variables numéricas se declaran de la siguiente forma:
   ```python
   x = 1    # int
   y = 2.8  # float
   z = 1j   # complex
   ```
-  - Obtener el tipo de dato de una variable: Python tiene varios tipos de datos estándar, pero también podemos definir nuestros propios tipos de datos personalizados. Para obtener el tipo de dato de una variable, podemos usar la función type():
-  ```python
-  x = 5
-  y = "Hola Mundo!"
-  print(type(x))
-  print(type(y))
-  ```
 
-  - Asignar múltiples valores a múltiples variables: Python le permite asignar valores a múltiples variables en una línea:
-  ```python
-  x, y, z = "Naranja", "Plátano", "Cereza"
-  print(x)
-  print(y)
-  print(z)
-  ```
-  - Asignar el mismo valor a múltiples variables: Python le permite asignar el mismo valor a múltiples variables en una línea:
-  ```python
-  x = y = z = "Naranja"
-  print(x)
-  print(y)
-  print(z)
-  ```
-
-  - Python diferencia sus variables entre mayúsculas y minúsculas, por lo que las variables x y X son diferentes.
+    - Python diferencia sus variables entre mayúsculas y minúsculas, por lo que las variables x y X son diferentes.
   Por ejemplo:
   ```python
   a = 4
   A = "Sally"
   #A es una variable diferente a a
   ```
-  
-  - Podemos nombrar las variables de diferente forma:
+
+    - Podemos nombrar las variables de diferente forma:
   ```python
   myvar = "John"
   my_var = "John"
@@ -461,15 +480,60 @@ if 5 > 2:
   my var = "John"
   ```
 
-  - Podemos desempaquetar una colección de valores en variables:
+  - Booleanos: Las variables booleanas solo pueden tener dos valores: Verdadero o Falso.
   ```python
-  frutas = ["manzana", "plátano", "cereza"]
-  x, y, z = frutas
+  x = True
+  y = False
+  ```
+  - Las variables booleanas a menudo se utilizan para comparar valores:
+  ```python
+  print(10 > 9)
+  print(10 == 9)
+  print(10 < 9)
+  ```
+  - Las variables booleanas se devuelven como resultado de comparaciones:
+  ```python
+  print(10 > 9)
+  print(10 == 9)
+  print(10 < 9)
+  ```
+
+
+  ### Casting en variables
+  
+  - Casting: Si queremos especificar el tipo de dato de una variable, podemos usar la función de casting:
+  ```python
+  x = str(3)    # x será '3'
+  y = int(3)    # y será 3
+  z = float(3)  # z será 3.0
+  ```
+
+  ### Obtención de tipo de datos de variablesQ
+
+  - Obtener el tipo de dato de una variable: Python tiene varios tipos de datos estándar, pero también podemos definir nuestros propios tipos de datos personalizados. Para obtener el tipo de dato de una variable, podemos usar la función type():
+  ```python
+  x = 5
+  y = "Hola Mundo!"
+  print(type(x))
+  print(type(y))
+  ```
+
+  ### Asignación de multiples variables
+  - Asignar múltiples valores a múltiples variables: Python le permite asignar valores a múltiples variables en una línea:
+  ```python
+  x, y, z = "Naranja", "Plátano", "Cereza"
   print(x)
   print(y)
   print(z)
   ```
-
+  - Asignar el mismo valor a múltiples variables: Python le permite asignar el mismo valor a múltiples variables en una línea:
+  ```python
+  x = y = z = "Naranja"
+  print(x)
+  print(y)
+  print(z)
+  ```
+  ### Concatenación de variables
   - Podemos utilizar la función + para combinar variables de cadena de texto:
   ```python
   x = "Python es "
@@ -483,18 +547,21 @@ if 5 > 2:
   y = "increíble"
   print(x + y)
   ```
+  
   - Para los números, el operador + funciona como una operación matemática:
   ```python
   x = 5
   y = 10
   print(x + y)
   ```
+
   - Si intentamos combinar una cadena de texto y un número, Python nos dará un error:
   ```python
   x = 5
   y = "John"
   print(x + y)
   ```
+  ### Funciones globales y variables globales
   - Podemos utilizar la función global() para crear una variable global, incluso si se crea dentro de una función:
   ```python
   x = "awesome"
@@ -540,6 +607,7 @@ if 5 > 2:
   print("Python is " + x)
   ```
 
+### Tipos de datos
 - Tipos de datos en python:
   - Texto: str
   - Numérico: int, float, complex
@@ -548,6 +616,9 @@ if 5 > 2:
   - Set: set, frozenset
   - Booleano: bool
   - Binario: bytes, bytearray, memoryview
+  
+  - Tipos de datos: 
+  
   | Tipo de Dato | Ejemplo                                        | Ejemplo con Constructor                       |
   | ---          | ---                                            | ---                                           |
   | str          | `x = "Hello World"`                            | `x = str("Hello World")`                      |
@@ -565,4 +636,866 @@ if 5 > 2:
   | bytearray    | `x = bytearray(5)`                             | `x = bytearray(5)`                            |
   | memoryview   | `x = memoryview(bytes(5))`                     | `x = memoryview(bytes(5))`                    |
 
--
+ ### Operadores
+ - Tipos de operadores aritméticos en python:
+
+    | Operador | Nombre | Ejemplo |
+    | --- | --- | --- |
+    | + | Addition | `x + y` |
+    | - | Subtraction | `x - y` |
+    | * | Multiplication | `x * y` |
+    | / | Division | `x / y` |
+    | % | Modulus | `x % y` |
+    | ** | Exponentiation | `x ** y` |
+    | // | Floor division | `x // y` |
+
+  - Tipos de operadores de asignación en python:
+  
+    | Operador | Ejemplo | Equivalente | 
+    | --- | --- | --- |
+    | = | `x = 5` | `x = 5` |
+    | += | `x += 3` | `x = x + 3` |
+    | -= | `x -= 3` | `x = x - 3` |
+    | *= | `x *= 3` | `x = x * 3` |
+    | /= | `x /= 3` | `x = x / 3` |
+    | %= | `x %= 3` | `x = x % 3` |
+    | //= | `x //= 3` | `x = x // 3` |
+    | **= | `x **= 3` | `x = x ** 3` |
+    | &= | `x &= 3` | `x = x & 3` |
+    | |= | `x |= 3` | `x = x | 3` |
+    | ^= | `x ^= 3` | `x = x ^ 3` |
+    | >>= | `x >>= 3` | `x = x >> 3` |
+    | <<= | `x <<= 3` | `x = x << 3` |
+
+  - Tipos de operadores de comparación en python:
+
+    | Operador | Nombre | Ejemplo |
+    | --- | --- | --- |
+    | == | Equal | `x == y` |
+    | != | Not equal | `x != y` |
+    | > | Greater than | `x > y` |
+    | < | Less than | `x < y` |
+    | >= | Greater than or equal to | `x >= y` |
+    | <= | Less than or equal to | `x <= y` |
+
+  - Tipos de operadores lógicos en python:
+  
+    | Operador | Descripción | Ejemplo |
+    | --- | --- | --- |
+    | and | Devuelve True si ambos son ciertos | `x < 5 and  x < 10` |
+    | or | Devuelve True si uno de los dos es cierto | `x < 5 or x < 4` |
+    | not | Invierte el resultado, devuelve False si el resultado es cierto | `not(x < 5 and x < 10)` |
+
+  - Tipos de operadores de identidad en python:
+  
+    | Operador | Descripción | Ejemplo |
+    | --- | --- | --- |
+    | is | Devuelve True si ambas variables son el mismo objeto | `x is y` |
+    | is not | Devuelve True si ambas variables no son el mismo objeto | `x is not y` |
+
+  - Tipos de operadores de bit a bit en Python:
+  
+    | Operador | Nombre | Descripción |
+    | --- | --- | --- |
+    | & | AND | Conjunto de bits |
+    | \| | OR | Conjunto de bits |
+    | ^ | XOR | Conjunto de bits |
+    | ~ | NOT | Conjunto de bits |
+    | << | Zero fill left shift | Desplazamiento de bits a la izquierda |
+    | >> | Signed right shift | Desplazamiento de bits a la derecha |
+  
+  ### Diferencias entre listas, tuplas, sets y diccionarios
+  Las listas, tuplas, sets y diccionarios son estructuras de datos en Python que se utilizan para almacenar colecciones de datos. Aquí están las principales diferencias entre ellos:
+
+  Listas: Son colecciones ordenadas y modificables que permiten duplicados. Se definen con corchetes []. Ejemplo: mi_lista = [1, 2, 3, 4, 5]
+
+  Tuplas: Son colecciones ordenadas e inmutables que permiten duplicados. Se definen con paréntesis (). Ejemplo: mi_tupla = (1, 2, 3, 4, 5)
+
+  Sets: Son colecciones no ordenadas, no indexadas y no permiten duplicados. Se definen con llaves {} o con la función set(). Ejemplo: mi_set = {1, 2, 3, 4, 5}
+
+  Diccionarios: Son colecciones no ordenadas, modificables e indexadas. No permiten duplicados y se definen con llaves {}. Ejemplo: mi_diccionario = {"nombre": "Juan", "edad": 30}
+
+  En resumen, las listas y tuplas son muy similares, pero las tuplas son inmutables. Los sets son útiles cuando quieres una colección que no permita duplicados. Los diccionarios son útiles cuando necesitas asociar valores con claves.
+
+
+  #### Listas
+
+  - Listas: Las listas se utilizan para almacenar varios elementos en una sola variable. Las listas se crean utilizando corchetes:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  print(lista)
+  ```
+  - Podemos acceder a los elementos de una lista haciendo referencia al número de índice:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  print(lista[1])
+  ```
+
+  - Podemos saber la longitud de la lista utilizando la función len():
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  print(len(lista))
+  ```
+
+  - La lista puede contener diferentes tipos de datos:
+  ```python
+  lista = ["manzana", "plátano", "cereza", 1, 2, 3]
+  print(lista)
+  ```
+
+  - Para saber el tipo de una lista se utiliza la función type():
+  ```python 
+  lista = ["manzana", "plátano", "cereza"]
+  print(type(lista))
+  ```
+
+  - Puedes comprobar si un valor existe en una lista utilizando la palabra clave in:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  if "manzana" in lista:
+    print("Sí, 'manzana' está en la lista de frutas")
+  ```
+  - Insertar y añadir valores a una lista:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  lista.append("naranja")
+  lista.insert(1, "limón")
+  print(lista)
+  ```
+
+  - Eliminar valores de una lista:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  lista.remove("plátano")
+  lista.pop()
+  del lista[0]
+  print(lista)
+  ```
+
+  - Eliminar la lista por completo:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  del lista
+  print(lista) #this will cause an error because "thislist" no longer exists.
+  ```
+
+  - Ampliar la lista con otra lista:
+  ```python
+  lista1 = ["a", "b" , "c"]
+  lista2 = [1, 2, 3]
+  lista1.extend(lista2)
+  print(lista1)
+  ```
+
+  - Como recorer una lista:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  for x in lista:
+    print(x)
+  ```
+
+  - Ordenar una lista:
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  lista.sort()
+  print(lista)
+  ```
+
+  #### Tuplas
+
+  - Tuplas: Las tuplas se utilizan para almacenar varios elementos en una sola variable. Una tupla es una colección ordenada y no cambiable. Las tuplas se crean utilizando paréntesis:
+  ```python
+  tupla = ("manzana", "plátano", "cereza")
+  print(tupla)
+  ```
+
+  #### Sets
+
+  - Sets: Los sets se utilizan para almacenar varios elementos en una sola variable. Un set es una colección que no está ordenada ni indexada. En Python, los sets se escriben con llaves.
+  ```python
+  set = {"manzana", "plátano", "cereza"}
+  print(set)
+  ```
+
+  #### Diccionarios
+
+  - Diccionarios: Los diccionarios se utilizan para almacenar varios elementos en una sola variable. Un diccionario es una colección desordenada, modificable e indexada. En Python, los diccionarios se escriben con llaves y tienen claves y valores.
+  ```python
+  diccionario = {
+    "marca": "Ford",
+    "modelo": "Mustang",
+    "año": 1964
+  }
+  print(diccionario)
+  ```
+
+  ### Estrucuturas de control
+
+  #### If
+  - If: La declaración if se utiliza para tomar decisiones basadas en diferentes condiciones.
+  ```python
+  a = 33
+  b = 200
+  if b > a:
+    print("b es mayor que a")
+  ```
+
+  - Elif: La declaración elif se utiliza para evitar que se ejecute el bloque if y el bloque else. Si la declaración elif es verdadera, se ejecutará el bloque elif, y el bloque else se omitirá.
+  ```python
+  a = 33
+  b = 33
+  if b > a:
+    print("b es mayor que a")
+  elif a == b:
+    print("a y b son iguales")
+  ```
+  - Else: La declaración else se utiliza para ejecutar un bloque de código si ninguna de las condiciones es verdadera.
+  ```python
+  a = 200
+  b = 33
+  if b > a:
+    print("b es mayor que a")
+  elif a == b:
+    print("a y b son iguales")
+  else:
+    print("a es mayor que b")
+  ```
+  - Short Hand If: Si solo hay una declaración a ejecutar, puede ponerla en la misma línea que la declaración if.
+  ```python
+  if a > b: print("a es mayor que b")
+  ```
+  - Short Hand If ... Else: Si solo hay una declaración a ejecutar para ambas condiciones, puede ponerlas en la misma línea:
+  ```python
+  a = 2
+  b = 330
+  print("A") if a > b else print("B")
+  ```
+  - And: La palabra clave and es un operador lógico, y se utiliza para combinar condiciones lógicas.
+  ```python
+  a = 200
+  b = 33
+  c = 500
+  if a > b and c > a:
+    print("Ambas condiciones son verdaderas")
+  ```
+  - Or: La palabra clave or es un operador lógico, y se utiliza para combinar condiciones lógicas.
+  ```python
+  a = 200
+  b = 33
+  c = 500
+  if a > b or a > c:
+    print("Al menos una de las condiciones es verdadera")
+  ```
+  - Not: La palabra clave not es un operador lógico, y se utiliza para invertir el valor de una condición lógica.
+  ```python
+  a = 200
+  b = 33
+  if not b > a:
+    print("b no es mayor que a")
+  ```
+  - Nested If: Una declaración if dentro de otra declaración if.
+  ```python
+  x = 41
+
+  if x > 10:
+    print("Por encima de diez,")
+    if x > 20:
+      print("y también por encima de 20!")
+    else:
+      print("pero no por encima de 20.")
+  ```
+
+  #### While
+  - While: Con la instrucción while podemos ejecutar un conjunto de declaraciones siempre que se cumpla una condición especificada.
+  ```python
+  i = 1
+  while i < 6:
+    print(i)
+    i += 1
+  ```
+  - Break: Con la instrucción break podemos detener el bucle aunque la condición while sea verdadera.
+  ```python
+  i = 1
+  while i < 6:
+    print(i)
+    if i == 3:
+      break
+    i += 1
+  ```
+  - Continue: Con la instrucción continue podemos detener la iteración actual del bucle y continuar con la siguiente.
+  ```python
+  i = 0
+  while i < 6:
+    i += 1
+    if i == 3:
+      continue
+    print(i)
+  ```
+  - Else: Con la instrucción else podemos ejecutar un bloque de código una vez cuando la condición ya no es verdadera.
+  ```python
+  i = 1
+  while i < 6:
+    print(i)
+    i += 1
+  else:
+    print("i ya no es menor que 6")
+  ```
+  #### For
+  - For: Un bucle for se utiliza para iterar sobre una secuencia (que es una lista, una tupla, un diccionario, un conjunto o una cadena).
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  for x in lista:
+    print(x)
+  ```
+  - Looping Through a String: Podemos recorrer una cadena de texto utilizando un bucle for.
+  ```python
+  for x in "banana":
+    print(x)
+  ```
+  - Break: Con la instrucción break podemos detener el bucle aunque la condición while sea verdadera.
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  for x in lista:
+    print(x)
+    if x == "plátano":
+      break
+  ```
+  - Continue: Con la instrucción continue podemos detener la iteración actual del bucle y continuar con la siguiente.
+  ```python
+  lista = ["manzana", "plátano", "cereza"]
+  for x in lista:
+    if x == "plátano":
+      continue
+    print(x)
+  ```
+  - Range: La función range() devuelve una secuencia de números, comenzando desde 0 de forma predeterminada, y se incrementa en 1 (de forma predeterminada), y termina en un número especificado.
+  ```python
+  for x in range(6):
+    print(x)
+  ```
+  - Else: Con la instrucción else podemos ejecutar un bloque de código una vez cuando la condición ya no es verdadera.
+  ```python
+  for x in range(6):
+    print(x)
+  else:
+    print("Finalmente terminó!")
+  ```
+  - Nested Loops: Un bucle anidado es un bucle dentro de un bucle. El "bucle interno" se ejecutará una vez por cada iteración del "bucle externo":
+  ```python
+  adj = ["rojo", "grande", "delicioso"]
+  frutas = ["manzana", "plátano", "cereza"]
+
+  for x in adj:
+    for y in frutas:
+      print(x, y)
+  ```
+
+  ### Funciones
+
+  - Funciones: Una función es un bloque de código que se ejecuta cuando se llama a la función. Puedes pasar datos, conocidos como parámetros, a una función. Una función puede devolver datos como resultado.
+  ```python
+  def my_function():
+    print("Hola desde una función")
+  ```
+  - Llamar a una función: Para llamar a una función, utiliza el nombre de la función seguido de paréntesis:
+  ```python
+  def my_function():
+    print("Hola desde una función")
+
+  my_function()
+  ```
+  - Argumentos: La información se puede pasar a las funciones como argumentos. Los argumentos se especifican después del nombre de la función, entre paréntesis. Puedes agregar tantos argumentos como desees, solo sepáralos con una coma.
+  ```python
+  def my_function(nombre):
+    print("Hola " + nombre)
+
+  my_function("Juan")
+  my_function("Carlos")
+  my_function("Pedro")
+  ```
+
+  - Número de argumentos: Al definir una función, se puede especificar el número de argumentos que se espera que tenga la función. Esto se hace agregando un número al nombre de argumento.
+  ```python
+  def my_function(fname):
+    print(fname + " Refsnes")
+
+  my_function("Emil")
+  my_function("Tobias")
+  my_function("Linus")
+  ```
+
+  - Argumentos arbitrarios: Si no sabes cuántos argumentos se pasarán a tu función, agrega un * antes del nombre del parámetro en la definición de la función.
+  ```python
+
+  def my_function(*kids):
+    print("El niño más joven es " + kids[2])
+
+  my_function("Emil", "Tobias", "Linus")
+  ```
+
+  - Argumentos con palabras clave: También puedes enviar argumentos con la sintaxis clave = valor. De esta forma, el orden de los argumentos no importa.
+  ```python
+  def my_function(child3, child2, child1):
+    print("El niño más joven es " + child3)
+
+  my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+  ```
+
+  - Argumentos arbitrarios, palabras clave: Si no sabes cuántos argumentos con palabras clave se pasarán a tu función, agrega dos asteriscos: ** antes del nombre del parámetro en la definición de la función.
+  ```python
+  def my_function(**kid):
+    print("Su apellido es " + kid["lname"])
+
+  my_function(fname = "Tobias", lname = "Refsnes")
+  ```
+
+  - Valor de parámetro predeterminado: Si llamamos a la función sin argumentos, utiliza el valor predeterminado:
+  ```python
+  def my_function(pais = "Noruega"):
+    print("Yo soy de " + pais)
+
+  my_function("Suecia")
+  my_function("India")
+  my_function()
+  my_function("Brasil")
+  ```
+
+  - Pasar una lista como argumento: Puedes enviar cualquier tipo de datos como argumento a una función (cadena, número, lista, diccionario, etc.), y se tratará como el mismo tipo de datos dentro de la función.
+  ```python
+  def my_function(comida):
+    for x in comida:
+      print(x)
+
+  frutas = ["manzana", "plátano", "cereza"]
+
+  my_function(frutas)
+  ```
+
+  - Devolver valores: Para permitir que una función devuelva un valor, utiliza la palabra clave return:
+  ```python
+  def my_function(x):
+    return 5 * x
+
+  print(my_function(3))
+  print(my_function(5))
+  print(my_function(9))
+  ```
+
+  ### Lambda
+
+  - Lambda: Una función lambda es una pequeña función anónima. Una función lambda puede tomar cualquier número de argumentos, pero solo puede tener una expresión.
+  ```python
+  x = lambda a : a + 10
+  print(x(5))
+  ```
+
+  - Lambda con varios argumentos: Una función lambda puede tomar cualquier número de argumentos:
+  ```python
+  x = lambda a, b : a * b
+  print(x(5, 6))
+  ```
+
+  - Lambda dentro de otra función: Una función lambda puede tomar cualquier número de argumentos, pero solo puede tener una expresión.
+  ```python
+  def myfunc(n):
+    return lambda a : a * n
+
+  mydoubler = myfunc(2)
+
+  print(mydoubler(11))
+  ```
+
+  ### Arrays
+
+  - Arrays: Los arrays se utilizan para almacenar varios valores en una sola variable, a diferencia de las variables normales. Si tienes una lista de elementos (una lista de nombres, por ejemplo), almacenar los nombres en variables podría parecerse a esto:
+  ```python
+  nombre1 = "Juan"
+  nombre2 = "Carlos"
+  nombre3 = "Pedro"
+  ```
+  - Pero, ¿qué pasa si quieres recorrer los nombres y encontrar un nombre en particular? Y ¿qué pasa si no sabes cuántos nombres hay? La solución es un array. Un array puede contener muchos valores bajo un solo nombre, y puede acceder a los valores haciendo referencia a un número de índice.
+  ```python
+  nombres = ["Juan", "Carlos", "Pedro"]
+  print(nombres[1])
+  ```
+
+  - Longitud de un array: Utiliza la función len() para determinar la longitud de un array.
+  ```python
+  nombres = ["Juan", "Carlos", "Pedro"]
+  print(len(nombres))
+  ```
+  - Un array con datos de diferentes tipos: Un array puede contener diferentes tipos de datos:
+  ```python
+  array = ["Juan", 1, True]
+  print(array)
+  ```
+
+### Iteradores
+
+- Iteradores: Un iterador es un objeto que contiene un número contable de valores. Un iterador es un objeto que se puede iterar sobre, lo que significa que puede atravesar todos los valores. Los iteradores se pueden crear utilizando la función iter(). Para crear un objeto iterable, debe implementar el método __iter__() en la clase.
+  ```python
+  class MiClase:
+    def __iter__(self):
+      self.a = 1
+      return self
+
+  mi_clase = MiClase()
+  mi_iterador = iter(mi_clase)
+
+  print(next(mi_i
+  ```
+
+  ### Polimorfismo
+
+  - Polimorfismo: Polimorfismo significa "muchas formas", y ocurre cuando tenemos muchas clases que están relacionadas entre sí por herencia.
+  ```python
+  class Perro:
+    def sonido(self):
+      print("Guau")
+
+  class Gato:
+    def sonido(self):
+      print("Miau")
+
+  def hacer_sonar(animal_type):
+    animal_type.sonido()
+
+  perro = Perro()
+  gato = Gato()
+  
+  hacer_sonar(perro)
+  hacer_sonar(gato)
+  ```
+
+  ### Módulos
+
+  - Módulos: Considere un módulo como una biblioteca de funciones para incluir en su aplicación.
+  ```python
+  import mi_modulo
+
+  mi_modulo.saludar("Juan")
+  ```
+
+  - Variables en módulos: El módulo puede contener funciones, así como variables de todo tipo (listas, diccionarios, objetos, etc.):
+  ```python
+  import mi_modulo
+
+  a = mi_modulo.personas1["nombre"]
+  print(a)
+  ```
+
+  - Renombrar un módulo: Puede crear un alias cuando importa un módulo, al usar la palabra clave as:
+  ```python
+  import mi_modulo as mx
+  
+  a = mx.personas1["nombre"]
+  print(a)
+  ```
+
+  - Importar solo partes de un módulo: Puede elegir importar solo partes de un módulo, al usar la palabra clave from.
+  ```python
+  from mi_modulo import personas1
+
+  print(personas1["nombre"])
+  ```
+
+  - Variables integradas: Hay varios módulos integrados en Python, que se pueden importar en cualquier momento y en cualquier lugar, sin importar si se ha instalado el módulo:
+  ```python
+  import platform
+
+  x = platform.system()
+  print(x)
+  ```
+
+## POO en Python
+
+### Clases y objetos
+
+  - Clases y objetos: Python es un lenguaje orientado a objetos. Casi todo en Python es un objeto, con sus propiedades y métodos. Una clase es como un constructor de objetos, o un "plano" para crear objetos.
+  ```python
+  class MiClase:
+    x = 5
+    
+  p1 = MiClase()
+  print(p1.x)
+  ```
+
+  - Objetos: Una vez que tenga una clase creada, puede utilizar el objeto para acceder a sus atributos.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+  p1 = Persona("Juan", 36)
+
+  print(p1.nombre)
+  print(p1.edad)
+  ```
+
+  - Modificar propiedades de un objeto: Puede modificar las propiedades de un objeto de la siguiente manera:
+  ```python
+  p1.edad = 40
+  ```
+
+  - Eliminar propiedades de un objeto: Puede eliminar propiedades de objetos de la siguiente manera:
+  ```python
+  del p1.edad
+  ```
+
+  - Eliminar objetos: Puede eliminar objetos utilizando la palabra clave del:
+  ```python
+  del p1
+  ```
+
+  - Añadir propiedades: Puede añadir propiedades a clases y objetos existentes de la siguiente manera:
+  ```python
+  class Persona:
+    def __init__(self, fname, lname):
+      self.firstname = fname
+      self.lastname = lname
+
+    def printname(self):
+      print(self.firstname, self.lastname)
+
+  class Estudiante(Persona):
+
+    def __init__(self, fname, lname, year):
+      super().__init__(fname, lname)
+      self.graduationyear = year
+
+    def bienvenida(self):
+      print("Bienvenido", self.firstname, self.lastname, "a la clase de", self.graduationyear)
+
+  x = Estudiante("Juan", "Perez", 2019)
+  x.bienvenida()
+  ```
+
+  ### Métodos
+
+  - Métodos: Los métodos son funciones que pertenecen a los objetos.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    def mi_funcion(self):
+      print("Hola mi nombre es " + self.nombre)
+
+  p1 = Persona("Juan", 36)
+  p1.mi_funcion()
+  ```
+
+  - El self parámetro: El self parámetro es una referencia a la instancia actual de la clase, y se utiliza para acceder a las variables que pertenecen a la clase.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    def mi_funcion(self):
+      print("Hola mi nombre es " + self.nombre)
+
+  p1 = Persona("Juan", 36)
+  p1.mi_funcion()
+  ```
+
+  - Función super(): Python también tiene una función super() que hará que la clase hija herede todos los métodos y propiedades de su clase padre:
+  ```python
+  class Persona:
+    def __init__(self, fname, lname):
+      self.firstname = fname
+      self.lastname = lname
+
+    def printname(self):
+      print(self.firstname, self.lastname)
+
+  class Estudiante(Persona):
+
+    def __init__(self, fname, lname):
+      super().__init__(fname, lname)
+
+  x = Estudiante("Juan", "Perez")
+  x.printname()
+  ```
+
+  ### Getter y Setter
+
+  - Getter y Setter: Los getters y setters se utilizan para proteger los datos, controlar el acceso a ellos, obtenerlos y establecerlos.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    def mi_funcion(self):
+      print("Hola mi nombre es " + self.nombre)
+
+  p1 = Persona("Juan", 36)
+  p1.mi_funcion()
+  ```
+
+  ### Encapsulación
+
+  - Encapsulación: La encapsulación significa que los atributos y métodos internos de una clase no se pueden acceder desde el exterior de la clase.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    def mi_funcion(self):
+      print("Hola mi nombre es " + self.nombre)
+
+  p1 = Persona("Juan", 36)
+  p1.mi_funcion()
+  ```
+
+  ### Herencia
+
+  - Herencia: La herencia nos permite definir una clase que hereda todos los métodos y propiedades de otra clase.
+  ```python
+  class Persona:
+    def __init__(self, fname, lname):
+      self.firstname = fname
+      self.lastname = lname
+
+    def printname(self):
+      print(self.firstname, self.lastname)
+
+  class Estudiante(Persona):
+      
+      def __init__(self, fname, lname, year):
+        super().__init__(fname, lname)
+        self.graduationyear = year
+  
+      def bienvenida(self):
+        print("Bienvenido", self.firstname, self.lastname, "a la clase de", self.graduationyear)
+
+  x = Estudiante("Juan", "Perez", 2019)
+  x.bienvenida()
+  ```
+
+  ### Métodos especiales de Python
+
+  - Métodos especiales de Python: Los métodos especiales de Python son métodos especiales que puede utilizar dentro de su clase para realizar tareas específicas, como la inicialización y la creación de objetos, etc. Los métodos especiales se definen con guiones bajos dobles __init__(), __del__(), __repr__(), etc.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    def __str__(self):
+      return "Mi nombre es " + self.nombre
+
+  p1 = Persona("Juan", 36)
+  print(p1)
+  ```
+
+  ### Métodos estáticos
+
+  - Métodos estáticos: Los métodos estáticos en Python son métodos que se pueden llamar sin crear una instancia de una clase. Los métodos estáticos se definen con la palabra clave @staticmethod.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    @staticmethod
+    def mi_funcion():
+      print("Hola")
+
+  Persona.mi_funcion()
+  ```
+
+  ### Métodos de clase
+
+  - Métodos de clase: Los métodos de clase en Python son métodos que se llaman con la clase como primer argumento. Los métodos de clase se definen con la palabra clave @classmethod.
+  ```python
+  class Persona:
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+
+    @classmethod
+    def mi_funcion(cls):
+      print("Hola")
+
+  Persona.mi_funcion()
+  ```
+
+  ### Herencia múltiple
+
+  - Herencia múltiple: La herencia múltiple significa que una clase puede heredar de múltiples clases. Python admite una forma limitada de herencia múltiple en clases. Las clases derivadas pueden heredar de una o más clases base.
+  ```python
+  class Persona:
+    def __init__(self, fname, lname):
+      self.firstname = fname
+      self.lastname = lname
+
+    def printname(self):
+      print(self.firstname, self.lastname)
+
+  class Estudiante(Persona):
+    def __init__(self, fname, lname, year):
+      super().__init__(fname, lname)
+      self.graduationyear = year
+
+    def bienvenida(self):
+      print("Bienvenido", self.firstname, self.lastname, "a la clase de", self.graduationyear)
+
+  class Estudiante2(Persona):
+
+    def __init__(self, fname, lname, year):
+      super().__init__(fname, lname)
+      self.graduationyear = year
+
+    def bienvenida(self):
+      print("Bienvenido", self.firstname, self.lastname, "a la clase de", self.graduationyear)
+
+  x = Estudiante("Juan", "Perez", 2019)
+  x.bienvenida()
+  ```
+
+  ### Clases abstractas
+
+  - Clases abstractas: Las clases abstractas, que nunca están destinadas a ser instanciadas, pueden ser útiles para definir interfaces que deben ser implementadas por clases concretas.
+  ```python
+  from abc import ABC, abstractmethod
+
+  class Persona(ABC):
+    def __init__(self, nombre, edad):
+      self.nombre = nombre
+      self.edad = edad
+      super().__init__()
+
+    @abstractmethod
+    def mi_funcion(self):
+      pass
+
+  class Estudiante(Persona):
+    def __init__(self, fname, lname, year):
+      super().__init__(fname, lname)
+      self.graduationyear = year
+
+    def mi_funcion(self):
+      print("Bienvenido", self.firstname, self.lastname, "a la clase de", self.graduationyear)
+      
+  x = Estudiante("Juan", "Perez", 2019)
+  x.mi_funcion()
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
