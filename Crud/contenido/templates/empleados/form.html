@@ -1,0 +1,22 @@
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% for campo in formulario %}
+
+    <div class="mb-3">
+        <label for="nombre" class="form-label">{{ campo.label }}</label>
+        <input
+            type="{{ campo.field.widget.input_type }}"
+            class="form-control"
+            name="{{ campo.name }}"
+            id="{{ campo.name }}"
+            aria-describedby="nombreHelp"
+            placeholder="{{ campo.label }}"
+            value="{{ campo.value | default:'' }}"
+        />
+        <small id="nombreHelp" class="form-text text-muted">Introduce el {{ campo.label }} del empleado</small>
+    </div>
+    <div class="col-12 help-text"> {{ campo.errors }} </div>
+    {% endfor %}
+    <input name="" id="" class="btn btn-success" type="submit" value="Enviar información">
+    <a name="" id="" class="btn btn-primary" href="{% url 'empleados' %}" role="button"> Cancelar </a>
+</form>
